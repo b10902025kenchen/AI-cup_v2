@@ -1,1 +1,18 @@
-# AI-cup_v2
+依照以下步驟可以復現private data的預測結果：
+- 將training.csv, public.csv與private_1_processed移入preprocess資料夾內
+- cd 到 Preprocess
+- python concatenate.py
+- python add_time.py
+- python add_myf.py
+- python add_cano.py
+- python add_more_features.py
+- python add_conam.py
+- python fill_null_train.py
+- python fill_null_test.py
+- python group.py
+- python dup.py
+- python dup2.py
+- 將train_time_myf_cano_moref_conam_null_group.csv與test_time_myf_cano_moref_conam_null_group.csv移入Model資料夾內
+- cd 到 Model
+- python XGB.py
+- xgb.csv即為private data的預測結果
